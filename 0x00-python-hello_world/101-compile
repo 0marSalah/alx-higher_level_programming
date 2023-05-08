@@ -1,2 +1,6 @@
 #!/bin/bash
-python3 -m py_compile "$PYFILEc"
+pyfile=${PYFILE}
+pyfilec="${pyfile}c"
+echo "Compiling ${pyfile} ..."
+python3 -m compileall ${pyfile}
+mv ${pyfilec} .
