@@ -200,3 +200,19 @@ Write a program that prints the ASCII alphabet, in reverse order, alternating lo
     You can only use one loop in your code
     You are not allowed to store characters in a variable
     You are not allowed to import any module
+--------------
+
+# 15. Remove at position
+#advanced
+
+Write a function that creates a copy of the string, removing the character at the position n (not the Python way, the “C array index”).
+
+    Prototype: def remove_char_at(str, n):
+    You are not allowed to import any module 
+    You don’t need to understand __import__
+----------------
+
+# 16. ByteCode -> Python #2
+#advanced
+
+Write the Python function def magic_calculation(a, b, c): that does exactly the same as the following Python bytecode:
