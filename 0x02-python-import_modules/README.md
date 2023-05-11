@@ -162,3 +162,17 @@ Write the Python function def magic_calculation(a, b): that does exactly the sam
             106 RETURN_VALUE
             107 LOAD_CONST               0 (None)
             110 RETURN_VALUE
+-------------------
+
+# 9. Fast alphabet
+#advanced
+
+Write a program that prints the alphabet in uppercase, followed by a new line.
+
+    Your program should be maximum 3 lines long
+    You are not allowed to use:
+        any loops
+        any conditional statements
+        str.join()
+        any string literal
+        any system calls
