@@ -98,6 +98,7 @@ Write a function that adds 2 tuples.
     If a tuple is smaller than 2, use the value 0 for each missing integer
     If a tuple is bigger than 2, use only the first 2 integers
 ------------------
+
 # 8. More returns!
 mandatory
 
@@ -107,6 +108,17 @@ Write a function that returns a tuple with the length of a string and its first 
     If the sentence is empty, the first character should be equal to None
     You are not allowed to import any module
 ------------------
+
+# 9. Find the max
+mandatory
+
+Write a function that finds the biggest integer of a list.
+
+    Prototype: def max_integer(my_list=[]):
+    If the list is empty, return None
+    You can assume that the list only contains integers
+    You are not allowed to import any module
+    You are not allowed to use the builtin max()
 ------------------
 ------------------
 ------------------
