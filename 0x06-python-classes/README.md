@@ -164,6 +164,33 @@ Write a class Square that defines a square by: (based on 6-square.py)
         position should be use by using space
     Printing a Square instance should have the same behavior as my_print()
     You are not allowed to import any module
+----------
+    guillaume@ubuntu:~/0x06$ cat 101-main.py
+    #!/usr/bin/python3
+    Square = __import__('101-square').Square
+
+    my_square = Square(5, (0, 0))
+    print(my_square)
+
+    print("--")
+
+    my_square = Square(5, (4, 1))
+    print(my_square)
+
+    guillaume@ubuntu:~/0x06$ ./101-main.py | tr " " "_" | cat -e
+    #####$
+    #####$
+    #####$
+    #####$
+    #####$
+    --$
+    $
+    ____#####$
+    ____#####$
+    ____#####$
+    ____#####$
+    ____#####$
+    guillaume@ubuntu:~/0x06$ 
 ------------
 #
 ------------
