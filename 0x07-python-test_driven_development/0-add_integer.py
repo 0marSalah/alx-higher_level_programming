@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Defines an integer addition function."""
 
-def add_integers(a, b=98):
+def add_integer(a, b=98):
     """
       Raises:
         TypeError: If a or b is not an integer or float.
