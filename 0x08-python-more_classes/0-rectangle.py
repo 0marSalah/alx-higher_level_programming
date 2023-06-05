@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """module for Rectangle class."""
 
 
