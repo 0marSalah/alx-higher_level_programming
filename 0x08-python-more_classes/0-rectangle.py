@@ -2,5 +2,7 @@
 
 """module for Rectangle class."""
 
+
 class Rectangle:
-  pass
+    """Defines a Rectangle."""
+    pass
