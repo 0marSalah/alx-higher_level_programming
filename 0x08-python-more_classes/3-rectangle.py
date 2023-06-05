@@ -55,8 +55,18 @@ class Rectangle:
         """return string representation of a rectangle"""
         if self.__width == 0 or self.__height == 0:
             return ""
-        return (("#"*self.__width + "\n")*self.__height)[:-1]
+        return (("#" * self.__width + "\n") * self.__height)[:-1]
 
-    def __repr__(self):
-        """return string representation of a rectangle"""
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+my_rectangle = Rectangle(2, 4)
+print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+
+print(str(my_rectangle))
+print(repr(my_rectangle))
+
+print("--")
+
+my_rectangle.width = 10
+my_rectangle.height = 3
+print(my_rectangle)
+print(repr(my_rectangle))
