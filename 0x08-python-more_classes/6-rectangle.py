@@ -3,7 +3,11 @@
 
 
 class Rectangle:
-    """Represent a rectangle."""
+    """Represent a rectangle.
+
+    Attributes:
+        number_of_instances (int): The number of Rectangle instances.
+    """
 
     number_of_instances = 0
 
@@ -14,9 +18,9 @@ class Rectangle:
             width (int): The width of the new rectangle.
             height (int): The height of the new rectangle.
         """
+        type(self).number_of_instances += 1
         self.width = width
         self.height = height
-        number_of_instances += 1
 
     @property
     def width(self):
@@ -54,10 +58,6 @@ class Rectangle:
             return 0
         return (self.__width + self.__height)*2
 
-    def number_of_instances(self):
-        """Public class attribute that counts the number of instances"""
-        return self.__class__.number_of_instances
-
     def __str__(self):
         """return string representation of a rectangle"""
         if self.__width == 0 or self.__height == 0:
@@ -73,5 +73,14 @@ class Rectangle:
 
     def __del__(self):
         """Print the message when an instance of Rectangle is deleted"""
-        number_of_instances -= 1
+        type(self).number_of_instances -= 1
         print("Bye rectangle...")
+
+
+my_rectangle_1 = Rectangle(2, 4)
+my_rectangle_2 = Rectangle(2, 4)
+print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
+del my_rectangle_1
+print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
+del my_rectangle_2
+print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
