@@ -5,6 +5,7 @@
 
 class Rectangle:
     """Defines a Rectangle."""
+
     def __init__(self, width=0, height=0):
         """Initializes a Rectangle."""
         self.__width = width
@@ -25,11 +26,3 @@ class Rectangle:
     def height(self, value):
         """setter for height attribute."""
         self.__height = value
-
-
-my_rectangle = Rectangle(2, 4)
-print(my_rectangle.__dict__)
-
-my_rectangle.width = 10
-my_rectangle.height = 3
-print(my_rectangle.__dict__)
