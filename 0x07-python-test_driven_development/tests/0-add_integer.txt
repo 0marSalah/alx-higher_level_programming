@@ -34,3 +34,17 @@ TypeError: b must be an integer
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
+
+Test present: Float overflow
+----------------------------
+>>> print(add_integer(1e100, 1e100))
+Traceback (most recent call last):
+    ...
+OverflowError: int too large to convert to float
+
+Test present: cannot convert float NaN to integer
+-------------------------------------------------
+>>> print(add_integer(float('NaN'), 1))
+Traceback (most recent call last):
+    ...
+TypeError: cannot convert float NaN to integer
