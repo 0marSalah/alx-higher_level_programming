@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""this module contains a class Rectangle that inherits from BaseGeometry"""
+"""this module contains a class Square that inherits from Rectangle"""
 
 
 class BaseGeometry:
@@ -47,3 +47,20 @@ class Rectangle(BaseGeometry):
     def __str__(self):
         """Returns the rectangle description."""
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
+
+
+class Square(Rectangle):
+    """Represents a Square."""
+
+    def __init__(self, size):
+        """
+        Initializes an instance.
+        Args:
+        size: size of the square
+        """
+        self.integer_validator("size", size)
+        self.__size = size
+        super().__init__(size, size)
+
+    def area(self):
+        return self.__size ** 2
