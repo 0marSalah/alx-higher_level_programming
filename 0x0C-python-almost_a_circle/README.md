@@ -263,3 +263,247 @@ Repo:
     GitHub repository: alx-higher_level_programming
     Directory: 0x0C-python-almost_a_circle
     File: models/rectangle.py
+
+## 4. Area first
+
+mandatory
+
+Update the class Rectangle by adding the public method def area(self): that returns the area value of the Rectangle instance.
+
+        guillaume@ubuntu:~/$ cat 3-main.py
+        #!/usr/bin/python3
+        """ 3-main """
+        from models.rectangle import Rectangle
+
+        if **name** == "**main**":
+
+            r1 = Rectangle(3, 2)
+            print(r1.area())
+
+            r2 = Rectangle(2, 10)
+            print(r2.area())
+
+            r3 = Rectangle(8, 7, 0, 0, 12)
+            print(r3.area())
+
+        guillaume@ubuntu:~/$ ./3-main.py
+        6
+        20
+        56
+        guillaume@ubuntu:~/$
+
+Repo:
+
+    GitHub repository: alx-higher_level_programming
+    Directory: 0x0C-python-almost_a_circle
+    File: models/rectangle.py
+
+## 5. Display #0
+
+mandatory
+
+Update the class Rectangle by adding the public method def display(self): that prints in stdout the Rectangle instance with the character # - you don’t need to handle x and y here.
+
+        guillaume@ubuntu:~/$ cat 4-main.py
+        #!/usr/bin/python3
+        """ 4-main """
+        from models.rectangle import Rectangle
+
+        if **name** == "**main**":
+
+            r1 = Rectangle(4, 6)
+            r1.display()
+
+            print("---")
+
+            r1 = Rectangle(2, 2)
+            r1.display()
+
+        guillaume@ubuntu:~/$ ./4-main.py
+        ####
+        ####
+        ####
+        ####
+        ####
+        ####
+        ---
+        ##
+        ##
+        guillaume@ubuntu:~/$
+
+Repo:
+
+    GitHub repository: alx-higher_level_programming
+    Directory: 0x0C-python-almost_a_circle
+    File: models/rectangle.py
+
+## 6. **str**
+
+mandatory
+
+Update the class Rectangle by overriding the **str** method so that it returns Rectangle id x/y - widtht/height
+
+    guillaume@ubuntu:~/$ cat 5-main.py
+    #!/usr/bin/python3
+    """ 5-main """
+    from models.rectangle import Rectangle
+
+    if __name__ == "__main__":
+
+        r1 = Rectangle(4, 6, 2, 1, 12)
+        print(r1)
+
+        r2 = Rectangle(5, 5, 1)
+        print(r2)
+
+    guillaume@ubuntu:~/$ ./5-main.py
+    [Rectangle] (12) 2/1 - 4/6
+    [Rectangle] (1) 1/0 - 5/5
+    guillaume@ubuntu:~/$
+
+Repo:
+
+    GitHub repository: alx-higher_level_programming
+    Directory: 0x0C-python-almost_a_circle
+    File: models/rectangle.py
+
+## 7. Display #1
+
+mandatory
+
+Update the class Rectangle by improving the public method def display(self): to print in stdout the Rectangle instance with the character # by taking care of x and y
+
+        guillaume@ubuntu:~/$ cat 6-main.py
+        #!/usr/bin/python3
+        """ 6-main """
+        from models.rectangle import Rectangle
+
+        if __name__ == "__main__":
+
+            r1 = Rectangle(2, 3, 2, 2)
+            r1.display()
+
+            print("---")
+
+            r2 = Rectangle(3, 2, 1, 0)
+            r2.display()
+
+        guillaume@ubuntu:~/$ ./6-main.py | cat -e
+        $
+        $
+        ##$
+        ##$
+        ##$
+        ---$
+        ###$
+        ###$
+        guillaume@ubuntu:~/$
+
+Repo:
+
+    GitHub repository: alx-higher_level_programming
+    Directory: 0x0C-python-almost_a_circle
+    File: models/rectangle.py
+
+## 8. Update #0
+
+mandatory
+
+Update the class Rectangle by adding the public method def update(self, \*args): that assigns an argument to each attribute:
+
+    1st argument should be the id attribute
+    2nd argument should be the width attribute
+    3rd argument should be the height attribute
+    4th argument should be the x attribute
+    5th argument should be the y attribute
+
+This type of argument is called a “no-keyword argument” - Argument order is super important.
+
+guillaume@ubuntu:~/$ cat 7-main.py
+#!/usr/bin/python3
+""" Doc """
+from models.rectangle import Rectangle
+
+if **name** == "**main**":
+
+    r1 = Rectangle(10, 10, 10, 10)
+    print(r1)
+
+    r1.update(89)
+    print(r1)
+
+    r1.update(89, 2)
+    print(r1)
+
+    r1.update(89, 2, 3)
+    print(r1)
+
+    r1.update(89, 2, 3, 4)
+    print(r1)
+
+    r1.update(89, 2, 3, 4, 5)
+    print(r1)
+
+guillaume@ubuntu:~/$ ./7-main.py
+[Rectangle] (1) 10/10 - 10/10
+[Rectangle] (89) 10/10 - 10/10
+[Rectangle] (89) 10/10 - 2/10
+[Rectangle] (89) 10/10 - 2/3
+[Rectangle] (89) 4/10 - 2/3
+[Rectangle] (89) 4/5 - 2/3
+guillaume@ubuntu:~/$
+
+Repo:
+
+    GitHub repository: alx-higher_level_programming
+    Directory: 0x0C-python-almost_a_circle
+    File: models/rectangle.py
+
+## 9. Update #1
+
+mandatory
+
+Update the class Rectangle by updating the public method def update(self, *args): by changing the prototype to update(self, *args, \*\*kwargs) that assigns a key/value argument to attributes:
+
+    **kwargs can be thought of as a double pointer to a dictionary: key/value
+        As Python doesn’t have pointers, **kwargs is not literally a double pointer – describing it as such is just a way of explaining its behavior in terms you’re already familiar with
+    **kwargs must be skipped if *args exists and is not empty
+    Each key in this dictionary represents an attribute to the instance
+
+This type of argument is called a “key-worded argument”. Argument order is not important.
+
+guillaume@ubuntu:~/$ cat 8-main.py
+#!/usr/bin/python3
+""" 8-main """
+from models.rectangle import Rectangle
+
+if **name** == "**main**":
+
+    r1 = Rectangle(10, 10, 10, 10)
+    print(r1)
+
+    r1.update(height=1)
+    print(r1)
+
+    r1.update(width=1, x=2)
+    print(r1)
+
+    r1.update(y=1, width=2, x=3, id=89)
+    print(r1)
+
+    r1.update(x=1, height=2, y=3, width=4)
+    print(r1)
+
+guillaume@ubuntu:~/$ ./8-main.py
+[Rectangle] (1) 10/10 - 10/10
+[Rectangle] (1) 10/10 - 10/1
+[Rectangle] (1) 2/10 - 1/1
+[Rectangle] (89) 3/1 - 2/1
+[Rectangle] (89) 1/3 - 4/2
+guillaume@ubuntu:~/$
+
+Repo:
+
+    GitHub repository: alx-higher_level_programming
+    Directory: 0x0C-python-almost_a_circle
+    File: models/rectangle.py
