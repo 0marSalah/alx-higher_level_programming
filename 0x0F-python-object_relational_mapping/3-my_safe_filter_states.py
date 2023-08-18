@@ -14,9 +14,9 @@ if __name__ == '__main__':
     db = MySQLdb.connect(user=user, passwd=passwd, db=db_name, port=3306)
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM states;")
+    query = "SELECT * FROM states WHERE name = %s;"
+    cur.execute(query, (state_name,))
     states = cur.fetchall()
 
     for state in states:
-        if state[1][0] == "N":
-            print(state)
+        print(state)
