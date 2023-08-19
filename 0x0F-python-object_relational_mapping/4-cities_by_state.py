@@ -13,7 +13,7 @@ if __name__ == '__main__':
     db = MySQLdb.connect(user=user, passwd=passwd, db=db_name, port=3306)
 
     cur = db.cursor()
-    query = "SELECT cities.id, states.name, cities.name FROM states \
+    query = "SELECT cities.id, cities.name, states.name FROM states \
         , cities WHERE states.id = cities.state_id;"
     cur.execute(query)
     cities = cur.fetchall()
