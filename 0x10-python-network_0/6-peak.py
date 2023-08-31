@@ -8,6 +8,3 @@ def find_peak(list_of_integers):
         if list_of_integers[m] < list_of_integers[m + 1]: left = m + 1
         else: right = m
     return list_of_integers[m]
-
-    
-print(find_peak([1, 2, 4, 6, 3]))
