@@ -1,3 +1,3 @@
 #!/bin/bash
 # get body only if status is ok
-curl -sX "$1"
+curl -sX DELETE "$1"
