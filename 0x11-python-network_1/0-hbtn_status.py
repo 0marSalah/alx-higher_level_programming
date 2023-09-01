@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-# 0. Python script that fetches https://alx-intranet.hbtn.io/st
-
+"""A script that
+- fetches https://alx-intranet.hbtn.io/status.
+- uses urlib package
+"""
 
 if __name__ == '__main__':
     import urllib.request
