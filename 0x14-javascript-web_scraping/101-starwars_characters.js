@@ -16,16 +16,18 @@ const assert = (err, status) => {
   }
 };
 
-request(url, async (error, response) => {
+request(url, function (error, response, body) {
   assert(error, response.statusCode);
-
-  const characters = await JSON.parse(response.body).characters;
-  for (const character of characters) {
-    request(character, async (error, response) => {
-      assert(error, response.statusCode);
-
-      const name = await JSON.parse(response.body).name;
-      console.log(name);
-    });
-  }
+  const characters = JSON.parse(body).characters;
+  printCharacters(characters, 0);
 });
+
+function printCharacters(characters, index) {
+  request(characters[index], function (error, response, body) {
+    assert(error, response.statusCode);
+    console.log(JSON.parse(body).name);
+    if (index + 1 < characters.length) {
+      printCharacters(characters, index + 1);
+    }
+  });
+}
