@@ -22,7 +22,7 @@ request(url, function (error, response, body) {
   printCharacters(characters, 0);
 });
 
-function printCharacters(characters, index) {
+function printCharacters (characters, index) {
   request(characters[index], function (error, response, body) {
     assert(error, response.statusCode);
     console.log(JSON.parse(body).name);
