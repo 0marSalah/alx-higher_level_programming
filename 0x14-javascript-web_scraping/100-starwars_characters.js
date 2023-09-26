@@ -7,15 +7,12 @@ const url = 'https://swapi-api.alx-tools.com/api/films/' + fid;
 
 const assert = (err, status) => {
   if (err) {
-    console.error('Error fetching data:', error);
+    console.error('Error fetching data:', err);
     return;
   }
 
   if (status !== 200) {
-    console.error(
-      `Got an error from the API, status code: ${response.statusCode}`
-    );
-    return;
+    console.error(`Got an error from the API, status code: ${status}`);
   }
 };
 
