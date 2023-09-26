@@ -19,17 +19,17 @@ request(url, (error, response) => {
 
   const data = JSON.parse(response.body);
 
-  const completedCount_per_user = {};
+  const completed = {};
 
   for (const task of data) {
     if (task.completed) {
-      if (completedCount_per_user[task.userId]) {
-        completedCount_per_user[task.userId] += 1;
+      if (completed[task.userId]) {
+        completed[task.userId] += 1;
       } else {
-        completedCount_per_user[task.userId] = 1;
+        completed[task.userId] = 1;
       }
     }
   }
 
-  console.log(completedCount_per_user);
+  console.log(completed);
 });
